@@ -11,7 +11,7 @@ function Chat() {
   const [hasName, setHasName] = useState(false);
 
   useEffect(() => {
-    localStorage.removeItem("chatUserName"); // Clear stored name on component mount
+    localStorage.removeItem("chatUserName"); 
 
     socket.on("chat message", (msg) => {
       setMessages((prevMessages) => [...prevMessages, msg]);
@@ -28,7 +28,7 @@ function Chat() {
       if (storedName) {
         setName(storedName);
         setHasName(true);
-        socket.emit("join", storedName); // Emit "join" event with stored username
+        socket.emit("join", storedName); 
       }
     }
   }, [hasName]);
@@ -38,7 +38,7 @@ function Chat() {
     if (name.trim() !== "") {
       localStorage.setItem("chatUserName", name.trim());
       setHasName(true);
-      socket.emit("join", name.trim()); // Emit "join" event with entered username
+      socket.emit("join", name.trim()); 
     } else {
       alert("Name cannot be empty.");
     }
