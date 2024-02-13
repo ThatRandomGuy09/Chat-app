@@ -53,30 +53,30 @@ function Chat() {
 
   return (
     <div className="flex flex-col h-screen">
-    {!hasName && (
-      <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <form onSubmit={handleNameSubmit} className="flex flex-col items-center">
-            <label htmlFor="name" className="block mb-2">
-              Please enter your name:
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="py-2 px-4 bg-gray-100 rounded-full focus:outline-none focus:ring focus:border-blue-300 mb-2"
-              placeholder="Your name..."
-            />
-            <button
-              type="submit"
-              className="py-2 px-4 bg-blue-500 text-white rounded-full font-semibold hover:bg-blue-600 transition duration-150 ease-in-out"
-            >
-              Start Chatting
-            </button>
-          </form>
+      {!hasName && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <form onSubmit={handleNameSubmit} className="flex flex-col items-center">
+              <label htmlFor="name" className="block mb-2">
+                Please enter your name:
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="py-2 px-4 bg-gray-100 rounded-full focus:outline-none focus:ring focus:border-blue-300 mb-2"
+                placeholder="Your name..."
+              />
+              <button
+                type="submit"
+                className="py-2 px-4 bg-blue-500 text-white rounded-full font-semibold hover:bg-blue-600 transition duration-150 ease-in-out"
+              >
+                Start Chatting
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
       )}
       <div className="flex-1 overflow-y-auto bg-gray-100 px-4 py-6">
         <motion.div
