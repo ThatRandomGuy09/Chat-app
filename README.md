@@ -45,6 +45,5 @@ cd frontend
 npm run dev
 ```
 
-The frontend should be accessible at `http://localhost:3000`.
 
 
